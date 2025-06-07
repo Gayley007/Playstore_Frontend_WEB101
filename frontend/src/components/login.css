@@ -1,0 +1,121 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: #f5f8ff;
+}
+
+.simple-login-outer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f8ff;
+}
+
+.simple-login-container {
+  background: #fff;
+  padding: 32px 32px 28px 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  min-width: 350px;
+  max-width: 370px;
+  border: 2px solid #e3eafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #222;
+  text-align: center;
+}
+
+.login-desc {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.simple-login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.simple-login-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fafbfc;
+  color: #222; /* Ensure input text is visible */
+}
+
+.simple-login-form button {
+  padding: 13px 0;
+  background: blue;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  transition: background 0.2s;
+}
+
+.simple-login-form button:disabled {
+  background: blue;
+  cursor: not-allowed;
+}
+
+.simple-login-form .login-error {
+  color: blue;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+  margin-top: -8px;
+}
+
+.login-forgot {
+  text-align: right;
+  margin-bottom: 2px;
+}
+
+.forgot-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 0.97rem;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.login-bottom-row {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.signup-link {
+  color: blue;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}

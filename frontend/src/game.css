@@ -1,26 +1,27 @@
 /* Ensure the entire viewport is used with no margin/padding */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  font-family: "Roboto", sans-serif; /* Use Roboto font */
 }
 
 /* Header bar styling */
 .game-header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 75px; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 1px 16px; 
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 16px;
   background-color: #ffffff;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); 
-  box-sizing: border-box; 
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   z-index: 1000;
 }
 
@@ -48,43 +49,44 @@ body, html {
 }
 /* Navigation tabs container */
 .game-tabs .game-tab {
-  color: black; 
+  color: black;
   text-decoration: none;
   padding: 8px 16px;
-  border-bottom: 2px solid transparent; 
-  transition: color 0.3s, border-color 0.3s; 
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
 }
 .game-tabs .game-tab:hover {
   color: green;
 }
 .game-tabs .game-tab.active {
-  color: rgb(0, 128, 0); 
-  border-color: green; 
+  color: rgb(0, 128, 0);
+  border-color: green;
 }
 /* Right-side section */
 .game-right-section {
   display: flex;
   align-items: center;
-  gap: 24px; 
+  gap: 24px;
 }
 .game-icon {
   width: 20px;
   height: 20px;
   color: #4b5563;
-  cursor: pointer; 
+  cursor: pointer;
 }
-/* Profile circle with initials or image */
-.game-profile {
-  width: 32px;
-  height: 32px;
-  background-color: #f97316; /* Orange background */
-  color: white;
-  border-radius: 50%; /* Make it a circle */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
+.game-login-btn {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 10px;
+  transition: background 0.2s;
+}
+.game-login-btn:hover {
+  background: #155ab6;
 }
 
 /* Main content below the header */
@@ -92,22 +94,22 @@ body, html {
   margin-top: 670px;
   margin-left: 50px;
   display: flex;
-  flex-wrap: wrap; 
-  gap: 16px; 
+  flex-wrap: wrap;
+  gap: 16px;
   padding: 0;
 }
 
 /* Individual content cards */
 .game-feature-card {
-  background-color: #f3f4f6; 
+  background-color: #f3f4f6;
   padding: 10px;
-  border-radius: 16px; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06); 
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
   font-size: 15px;
-  color: #1f2937; 
+  color: #1f2937;
   min-width: 70px;
   text-align: center;
-  height: 15px; 
+  height: 15px;
 }
 
 /* Hover effect for content cards */
