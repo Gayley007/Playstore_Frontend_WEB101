@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./data.css";
+import { Link } from "react-router-dom";
 
 // Sample Game Data
 const games = [
@@ -125,27 +126,27 @@ const GameCard = ({ game }) => {
 // Main Carousel Component
 const Data = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3); 
+  const [visibleCards, setVisibleCards] = useState(3);
 
   // Function to determine visible cards based on screen width
   const updateVisibleCards = () => {
     const width = window.innerWidth;
     if (width >= 1024) {
-      setVisibleCards(3); 
+      setVisibleCards(3); // Large screens (e.g., desktops)
     } else if (width >= 768) {
-      setVisibleCards(2); 
+      setVisibleCards(2); // Medium screens (e.g., tablets)
     } else {
-      setVisibleCards(1); 
+      setVisibleCards(1); // Small screens (e.g., mobile)
     }
   };
 
   // Use effect to update the visible cards when screen size changes
   useEffect(() => {
-    updateVisibleCards(); 
-    window.addEventListener("resize", updateVisibleCards); 
+    updateVisibleCards();
+    window.addEventListener("resize", updateVisibleCards);
 
     return () => {
-      window.removeEventListener("resize", updateVisibleCards); 
+      window.removeEventListener("resize", updateVisibleCards);
     };
   }, []);
 
