@@ -11,9 +11,9 @@ const GameDetails = () => {
 
   return (
     <div className="game-details">
-      <button onClick={() => navigate(-1)} style={{ marginBottom: "1rem" }}>← Back</button>
-      <h1>{game.title}</h1>
-      <img src={game.image} alt={game.title} style={{ width: "300px" }} />
+      <top onClick={() => navigate(-1)} style={{ marginBottom: "1rem" }}>← </top>
+      <img src={game.image} alt={game.title} style={{ width: "500px" }} />
+      <h2>{game.title}</h2>
       <p><strong>Category:</strong> {game.category}</p>
       <p><strong>Rating:</strong> ⭐ {game.rating}</p>
       <button className="install-button">Install</button>
