@@ -16,7 +16,7 @@ const GameDetails = () => {
       <img src={game.image} alt={game.title} style={{ width: "300px" }} />
       <p><strong>Category:</strong> {game.category}</p>
       <p><strong>Rating:</strong> ⭐ {game.rating}</p>
-      <p><strong>Install:</strong> INSTALL {game.install}</p>
+      <button className="install-button">Install</button>
       <p>Block Blast is a colorful, fun, and highly addictive offline block puzzle game that combines
          the best of casual gameplay and brain training. Designed for everyone, this relaxing game is 
          perfect whether you're a fan of logic puzzles, match 3 challenges, or just want a few minutes of simple fun.</p>
