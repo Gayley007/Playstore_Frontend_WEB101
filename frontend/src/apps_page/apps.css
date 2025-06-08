@@ -1,0 +1,330 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Header bar styling */
+  .apps-header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1px 16px; 
+    background-color: #ffffff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box; 
+    z-index: 1000;
+  }
+  
+  /* Container for logo and navigation tabs */
+  .apps-left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+  }
+  
+  /* Google Play logo and text section */
+  .apps-google-play-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+  }
+  .apps-google-logo-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .apps-google-logo-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #5f6368;
+  }
+  /* Navigation tabs container */
+  .apps-tabs .apps-tab {
+    color: black; 
+    text-decoration: none;
+    margin-top: 12px;
+    padding: 8px 16px;
+    border-bottom: 2px solid transparent; 
+    transition: color 0.3s, border-color 0.3s; 
+  }
+  .apps-tabs .apps-tab:hover {
+    color: green;
+  }
+  .apps-tabs .apps-tab.active {
+    border-color: green; 
+  }
+  /* Right-side section */
+  .apps-right-section {
+    display: flex;
+    align-items: center;
+    gap: 24px; 
+  }
+  .apps-icon {
+    width: 20px;
+    height: 20px;
+    color: #4b5563;
+    cursor: pointer; 
+  }
+  /* Profile circle with initials or image */
+  .apps-profile {
+    width: 32px;
+    height: 32px;
+    background-color: #f97316; /* Orange background */
+    color: white;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  /* Main content below the header */
+.apps-main-content {
+  margin-top: 1400px; 
+  margin-left: -500px;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 16px; 
+  padding: 16px; 
+  justify-content: center;
+}
+
+.apps-feature-card {
+  background-color: #f3f4f6; 
+  padding: 15px;
+  border-radius: 16px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06); 
+  font-size: 15px;
+  color: #1f2937; 
+  min-width: 100px; 
+  text-align: center;
+  height: auto; 
+  line-height: 1; 
+}
+
+.apps-feature-card:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+  background-color: #e5e7eb; 
+}
+
+  /* Top charts */
+  .apps-top-charts {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+  }
+  
+  .apps-top-charts-title {
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .apps-top-charts-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .apps-top-charts-tabs button {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 8px 16px;
+    color: gray;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .apps-top-charts-tabs button:hover {
+    background: #e3fdf1;
+    border: none;
+    color: #12613b;
+  }
+  .apps-top-charts-active {
+    background: #beedd0; 
+    color: #056a36;     
+    border: none;
+  }
+  .apps-top-charts-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .apps-top-charts-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+  
+  .apps-top-charts-card:hover {
+    background: #f1f3f4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .apps-top-charts-number {
+    width: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .apps-top-charts-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  
+  .apps-top-charts-info .apps-top-charts-title {
+    font-size: 15px;
+    font-weight: 480;
+    color: #1a1a1a;
+  }
+  
+  .apps-top-charts-info .apps-top-charts-tags {
+    color: gray;
+    font-size: 13px;
+    margin: 2px 0;
+  }
+  
+  .apps-top-charts-info .apps-top-charts-rating {
+    font-size: 13px;
+    color: #555
+  }
+  
+  /* app cards */
+  .apps-card-section1 {
+    padding-left: 100px;
+    margin-top: 60px;
+  }
+  .apps-card-section {
+    padding-left: 100px;
+    margin-top: 70px;
+    margin-bottom: 80px;
+  }
+  .apps-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #383838;
+    margin-left: 30px;
+  }
+  .apps-card-row {
+    display: flex; 
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .apps-card {
+    flex: 0 0 auto; 
+    width: 145px; 
+    height: 200px; 
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .apps-card:hover {
+    background-color: #f0f0f0;
+  }
+  .apps-card-image {
+    width: 140px;
+    height: 130px;
+    object-fit: cover; 
+    border-radius: 16px; 
+  }
+  .apps-card-title {
+    font-size: 14px; 
+    font-weight: 450;
+    color: #222;
+    margin-left: 3px;
+    margin-top: 0px;
+  }
+  .apps-card-rating {
+    font-size: 13px;
+    color: #585858;
+    margin-top: -12px;
+    margin-left: -88px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 40px 60px;
+    background-color: #a51515;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #5f6368;
+    border-top: 1px solid #e0e0e0;
+  }
+  /* Container for grouped footer columns */
+  .apps-footer-columns {
+    display: flex;
+    justify-content: flex-start;
+    gap: 80px;
+    margin-bottom: 40px;
+
+  }
+  /* Section titles in each column */
+  .apps-footer-column h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #202124;
+    margin-bottom: 16px;
+  }
+  /* Remove default list styling */
+  .apps-footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  /* hover */
+  .apps-footer-column ul :hover {
+    color: green;
+  }
+  /* List items under each heading */
+  .apps-footer-column ul li {
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  /* Bottom section of footer (links + language) */
+  .apps-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #5f6368;
+  }
+  /* Links container */
+  .apps-footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .apps-footer-links :hover {
+    color: green;
+  }
+  /* Individual links */
+  .apps-footer-links a {
+    text-decoration: none;
+    color: #5f6368;
+  }
+  /* Language display on the bottom right */
+  .apps-footer-language {
+    margin-top: 1px;
+    padding-left: 500px;
+  }

@@ -1,0 +1,92 @@
+.app {
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    color: black;
+    font-weight: 100;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .tabs button {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 8px 16px;
+    color: gray;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .tabs button:hover {
+    background: #e3fdf1;
+    border: none;
+    color: #12613b;
+  }
+  .tabs .active {
+    background: #d3f3df; /* Light green background */
+    color: #056a36;      /* Darker green text */
+    border: none;
+  }
+  
+  .games-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .game-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+  
+  .game-card:hover {
+    background: #f1f3f4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .game-number {
+    width: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .game-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  
+  .game-info .game-title {
+    font-size: 15px;
+    font-weight: 480;
+    color: #1a1a1a;
+  }
+  
+  .game-info .game-tags {
+    color: gray;
+    font-size: 13px;
+    margin: 2px 0;
+  }
+  
+  .game-info .game-rating {
+    font-size: 13px;
+    color: #555
+  }

@@ -1,0 +1,245 @@
+body {
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header bar styling */
+.kids-header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1px 16px; 
+  background-color: #ffffff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); 
+  box-sizing: border-box; 
+  z-index: 1000;
+}
+
+/* Container for logo and navigation tabs */
+.kids-left-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Google Play logo and text section */
+.kids-google-play-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.kids-google-logo-icon {
+  width: 24px;
+  height: 24px;
+}
+.kids-google-logo-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #5f6368;
+}
+/* Navigation tabs container */
+.kids-tabs .kids-tab {
+  color: black; 
+  text-decoration: none;
+  padding: 8px 16px;
+  border-bottom: 2px solid transparent; 
+  transition: color 0.3s, border-color 0.3s; 
+}
+.kids-tabs .kids-tab:hover {
+  color: green;
+}
+.kids-tabs .kids-tab.active {
+  border-color: green; 
+}
+/* Right-side section */
+.kids-right-section {
+  display: flex;
+  align-items: center;
+  gap: 24px; 
+}
+.kids-icon {
+  width: 20px;
+  height: 20px;
+  color: #4b5563;
+  cursor: pointer; 
+}
+/* Profile circle with initials or image */
+.kids-profile {
+  width: 32px;
+  height: 32px;
+  background-color: #f97316; /* Orange background */
+  color: white;
+  border-radius: 50%; /* Make it a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Main content  */
+.kids-main-section {
+  width: 100%;
+  margin-top: 77%;
+}
+
+/* Age Filter section */
+.kids-age-filter-section {
+  margin-top: 20px;
+  text-align: center;
+}
+.kids-age-filter-title {
+  font-size: 18px;
+  font-weight: 540;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+.kids-age-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.kids-age-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #474747;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 999px; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.kids-age-button:hover {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+}
+.kids-age-button.kids-active {
+  background-color: rgb(179, 232, 179); 
+  color: green;
+  border: none; 
+}
+
+/* game cards */
+.kids-card-section {
+  padding-left: 100px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+.kids-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #383838;
+  margin-left: 30px;
+}
+.kids-card-row {
+  display: flex; 
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+.kids-card {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  width: 145px; 
+  height: 200px; 
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.kids-card:hover {
+  background-color: #f0f0f0;
+}
+.kids-card-image {
+  width: 140px;
+  height: 130px;
+  object-fit: cover; 
+  border-radius: 16px; 
+}
+.kids-card-title {
+  font-size: 14px; 
+  font-weight: 450;
+  color: #222;
+  margin-left: 3px;
+  margin-top: 0px;
+}
+.kids-card-rating {
+  font-size: 13px;
+  color: #585858;
+  margin-top: -12px;
+  margin-left: -88px;
+}
+
+/* Footer */
+.kids-footer {
+  padding: 40px 60px;
+  background-color: #fff;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #5f6368;
+  border-top: 1px solid #e0e0e0;
+}
+/* Container for grouped footer columns */
+.kids-footer-columns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 80px;
+  margin-bottom: 40px;
+}
+/* Section titles in each column */
+.kids-footer-column h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 16px;
+}
+/* Remove default list styling */
+.kids-footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* hover */
+.kids-footer-column ul :hover {
+  color: green;
+}
+/* List items under each heading */
+.kids-footer-column ul li {
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+/* Bottom section of footer (links + language) */
+.kids-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #5f6368;
+}
+/* Links container */
+.kids-footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.kids-footer-links :hover {
+  color: green;
+}
+/* Individual links */
+.kids-footer-links a {
+  text-decoration: none;
+  color: #5f6368;
+}
+/* Language display on the bottom right */
+.kids-footer-language {
+  margin-top: 1px;
+  padding-left: 500px;
+}
