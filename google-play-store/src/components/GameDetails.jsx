@@ -20,7 +20,7 @@ const GameDetails = () => {
       <p>Block Blast is a colorful, fun, and highly addictive offline block puzzle game that combines
          the best of casual gameplay and brain training. Designed for everyone, this relaxing game is 
          perfect whether you're a fan of logic puzzles, match 3 challenges, or just want a few minutes of simple fun.</p>
-    <p><strong>Comment:</strong> I really enjoy playing Block Blast{game.rating}</p>
+    <p><strong>Comment:</strong> I really enjoy playing Block Blast{game.Comment}</p>
     </div>
     
   );
