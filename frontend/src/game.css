@@ -89,6 +89,45 @@ html {
   background: #155ab6;
 }
 
+/* Search bar styling */
+.game-searchbar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.game-searchbar-expanded {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(60, 64, 67, 0.15);
+  padding: 0 12px;
+  height: 44px;
+  width: 350px;
+  border: 1px solid #e0e0e0;
+  transition: width 0.2s;
+}
+.game-searchbar-icon {
+  color: #757575;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+.game-searchbar-input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  background: transparent;
+  color: #222;
+}
+@media (max-width: 500px) {
+  .game-searchbar-expanded {
+    width: 90vw;
+    min-width: 0;
+  }
+}
+
 /* Main content below the header */
 .game-main-content {
   margin-top: 670px;

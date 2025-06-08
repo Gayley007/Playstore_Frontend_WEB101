@@ -1,22 +1,22 @@
 body {
   background-color: #ffffff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Header bar styling */
 .kids-header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 75px; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 1px 16px; 
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 16px;
   background-color: #ffffff;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); 
-  box-sizing: border-box; 
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   z-index: 1000;
 }
 
@@ -44,29 +44,29 @@ body {
 }
 /* Navigation tabs container */
 .kids-tabs .kids-tab {
-  color: black; 
+  color: black;
   text-decoration: none;
   padding: 8px 16px;
-  border-bottom: 2px solid transparent; 
-  transition: color 0.3s, border-color 0.3s; 
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
 }
 .kids-tabs .kids-tab:hover {
   color: green;
 }
 .kids-tabs .kids-tab.active {
-  border-color: green; 
+  border-color: green;
 }
 /* Right-side section */
 .kids-right-section {
   display: flex;
   align-items: center;
-  gap: 24px; 
+  gap: 24px;
 }
 .kids-icon {
   width: 20px;
   height: 20px;
   color: #4b5563;
-  cursor: pointer; 
+  cursor: pointer;
 }
 /* Profile circle with initials or image */
 .kids-profile {
@@ -111,7 +111,7 @@ body {
   color: #474747;
   background-color: #ffffff;
   border: 1px solid #d1d5db;
-  border-radius: 999px; 
+  border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -120,9 +120,9 @@ body {
   border: 1px solid #d1d5db;
 }
 .kids-age-button.kids-active {
-  background-color: rgb(179, 232, 179); 
+  background-color: rgb(179, 232, 179);
   color: green;
-  border: none; 
+  border: none;
 }
 
 /* game cards */
@@ -139,14 +139,14 @@ body {
   margin-left: 30px;
 }
 .kids-card-row {
-  display: flex; 
+  display: flex;
   overflow-x: auto;
   padding-bottom: 10px;
 }
 .kids-card {
   flex: 0 0 auto; /* Prevent flex items from shrinking */
-  width: 145px; 
-  height: 200px; 
+  width: 145px;
+  height: 200px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -159,11 +159,11 @@ body {
 .kids-card-image {
   width: 140px;
   height: 130px;
-  object-fit: cover; 
-  border-radius: 16px; 
+  object-fit: cover;
+  border-radius: 16px;
 }
 .kids-card-title {
-  font-size: 14px; 
+  font-size: 14px;
   font-weight: 450;
   color: #222;
   margin-left: 3px;
@@ -242,4 +242,43 @@ body {
 .kids-footer-language {
   margin-top: 1px;
   padding-left: 500px;
+}
+
+/* Expanding search bar styles */
+.kids-searchbar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.kids-searchbar-expanded {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(60, 64, 67, 0.15);
+  padding: 0 12px;
+  height: 44px;
+  width: 350px;
+  border: 1px solid #e0e0e0;
+  transition: width 0.2s;
+}
+.kids-searchbar-icon {
+  color: #757575;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+.kids-searchbar-input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  background: transparent;
+  color: #222;
+}
+@media (max-width: 500px) {
+  .kids-searchbar-expanded {
+    width: 90vw;
+    min-width: 0;
+  }
 }

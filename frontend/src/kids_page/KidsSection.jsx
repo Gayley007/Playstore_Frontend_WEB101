@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom"; 
 import "../kids_page/KidsSection.css"; 
 import { Search, HelpCircle } from "lucide-react";
@@ -76,6 +76,14 @@ const Footer = () => {
 
 export default function KidsSection() {
   const [activeButton, setActiveButton] = useState("All ages up to 12");
+  const [showSearch, setShowSearch] = useState(false);
+  const searchInputRef = useRef(null);
+
+  useEffect(() => {
+    if (showSearch && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [showSearch]);
 
   const handleButtonClick = (ageGroup) => {
     setActiveButton(ageGroup);
@@ -105,7 +113,23 @@ export default function KidsSection() {
 
         {/* Right section: Icons */}
         <div className="kids-right-section">
-          <Search className="kids-icon" />
+          <div className="kids-searchbar-container">
+            {showSearch ? (
+              <div className="kids-searchbar-expanded">
+                <Search className="kids-searchbar-icon" />
+                <input
+                  ref={searchInputRef}
+                  className="kids-searchbar-input"
+                  type="text"
+                  placeholder="Search for apps & games"
+                  onBlur={() => setShowSearch(false)}
+                  onKeyDown={e => { if (e.key === "Escape") setShowSearch(false); }}
+                />
+              </div>
+            ) : (
+              <Search className="kids-icon" onClick={() => setShowSearch(true)} />
+            )}
+          </div>
           <HelpCircle className="kids-icon" />
           <div className="kids-profile">S</div>
         </div>

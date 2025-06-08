@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom"; 
 import "../apps_page/apps.css"; 
 import { Search, HelpCircle } from "lucide-react";
@@ -51,6 +51,14 @@ const productivity = [
 
 export default function AppSection() { 
   const [activeTab, setActiveTab] = useState('Top free');
+  const [showSearch, setShowSearch] = useState(false);
+  const searchInputRef = useRef(null);
+
+  useEffect(() => {
+    if (showSearch && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [showSearch]);
 
   const games = [
     { id: 1, image: '/bhutanndi.png', name: 'Bhutan NDI', tags: 'Business', rating: 3.3 },
@@ -88,7 +96,23 @@ export default function AppSection() {
 
         {/* Right section: Icons */}
         <div className="apps-right-section">
-          <Search className="apps-icon" />
+          <div className="apps-searchbar-container">
+            {showSearch ? (
+              <div className="apps-searchbar-expanded">
+                <Search className="apps-searchbar-icon" />
+                <input
+                  ref={searchInputRef}
+                  className="apps-searchbar-input"
+                  type="text"
+                  placeholder="Search for apps & games"
+                  onBlur={() => setShowSearch(false)}
+                  onKeyDown={e => { if (e.key === "Escape") setShowSearch(false); }}
+                />
+              </div>
+            ) : (
+              <Search className="apps-icon" onClick={() => setShowSearch(true)} />
+            )}
+          </div>
           <HelpCircle className="apps-icon" />
           <div className="apps-profile">S</div>
         </div>
