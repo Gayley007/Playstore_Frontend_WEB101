@@ -1,0 +1,159 @@
+/* Ensure the entire viewport is used with no margin/padding */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif; 
+}
+
+/* Header bar styling */
+.game-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 16px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* Container for logo and navigation tabs */
+.game-left-section {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+}
+
+/* Google Play logo and text section */
+.game-google-play-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+.game-google-logo-icon {
+  width: 24px;
+  height: 24px;
+}
+.game-google-logo-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #5f6368;
+}
+/* Navigation tabs container */
+.game-tabs .game-tab {
+  color: black;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+.game-tabs .game-tab:hover {
+  color: green;
+}
+.game-tabs .game-tab.active {
+  color: rgb(0, 128, 0);
+  border-color: green;
+}
+/* Right-side section */
+.game-right-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.game-icon {
+  width: 20px;
+  height: 20px;
+  color: #4b5563;
+  cursor: pointer;
+}
+.game-login-btn {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 10px;
+  transition: background 0.2s;
+}
+.game-login-btn:hover {
+  background: #155ab6;
+}
+
+/* Search bar styling */
+.game-searchbar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.game-searchbar-expanded {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(60, 64, 67, 0.15);
+  padding: 0 12px;
+  height: 44px;
+  width: 350px;
+  border: 1px solid #e0e0e0;
+  transition: width 0.2s;
+}
+.game-searchbar-icon {
+  color: #757575;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+.game-searchbar-input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  background: transparent;
+  color: #222;
+}
+@media (max-width: 500px) {
+  .game-searchbar-expanded {
+    width: 90vw;
+    min-width: 0;
+  }
+}
+
+/* Main content below the header */
+.game-main-content {
+  margin-top: 670px;
+  margin-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+}
+
+/* Individual content cards */
+.game-feature-card {
+  background-color: #f3f4f6;
+  padding: 10px;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  font-size: 15px;
+  color: #1f2937;
+  min-width: 70px;
+  text-align: center;
+  height: 15px;
+}
+
+/* Hover effect for content cards */
+.game-feature-card:hover {
+  transform: translateY(-4px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: #e5e7eb; 
+}

@@ -1,0 +1,89 @@
+
+.appContainer {
+    padding: 10px;
+    margin-left: 100px;
+  }
+  .sectionTitle {
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 16px;
+    text-align: left;
+    color: #000000;
+    margin-left: 50px;
+  }
+
+  .carouselNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .carouselWrapper {
+    overflow: hidden;
+    width: 180%;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    width: 377px;
+    height: 350px;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(160, 28, 28, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .navBtn {
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .navBtn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .image {
+    width: 400px;
+    height: auto;
+    display: block;
+  }
+  .icon {
+    height: 85px;
+    margin: 10px;
+  }
+  
+  .details {
+    display: flex;
+    align-items: center;
+  }
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+  }
+  .category {
+    font-size: 14px;
+    color: gray;
+  }
+  .rating {
+    font-size: 14px;
+    color: #ff9800;
+  }
