@@ -58,7 +58,7 @@ body {
   border-radius: 6px;
   font-size: 1rem;
   background: #fafbfc;
-  color: #222; /* Ensure input text is visible */
+  color: #222; 
 }
 
 .simple-login-form button {

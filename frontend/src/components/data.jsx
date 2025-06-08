@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import "./data.css";
 
@@ -132,11 +131,11 @@ const Data = () => {
   const updateVisibleCards = () => {
     const width = window.innerWidth;
     if (width >= 1024) {
-      setVisibleCards(3); // Large screens (e.g., desktops)
+      setVisibleCards(3); 
     } else if (width >= 768) {
-      setVisibleCards(2); // Medium screens (e.g., tablets)
+      setVisibleCards(2); 
     } else {
-      setVisibleCards(1); // Small screens (e.g., mobile)
+      setVisibleCards(1); 
     }
   };
 

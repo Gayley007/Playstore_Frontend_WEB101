@@ -73,9 +73,9 @@ body {
 .apps-profile {
   width: 32px;
   height: 32px;
-  background-color: #f97316; /* Orange background */
+  background-color: #f97316;
   color: white;
-  border-radius: 50%; /* Make it a circle */
+  border-radius: 50%; 
   display: flex;
   align-items: center;
   justify-content: center;

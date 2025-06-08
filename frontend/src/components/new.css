@@ -33,8 +33,8 @@
     color: #12613b;
   }
   .tabs .active {
-    background: #d3f3df; /* Light green background */
-    color: #056a36;      /* Darker green text */
+    background: #d3f3df; 
+    color: #056a36;     
     border: none;
   }
   

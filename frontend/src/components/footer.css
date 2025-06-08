@@ -9,37 +9,31 @@
     color: #5f6368;
     border-top: 1px solid #e0e0e0;
   }
-  /* Container for grouped footer columns */
-  .footer-columns {
+.footer-columns {
     display: flex;
     justify-content: flex-start;
     gap: 80px;
     margin-bottom: 40px;
   }
-  /* Section titles in each column */
-  .footer-column h3 {
+.footer-column h3 {
     font-size: 16px;
     font-weight: 500;
     color: #202124;
     margin-bottom: 16px;
   }
-  /* Remove default list styling */
-  .footer-column ul {
+.footer-column ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  /* hover */
-  .footer-column ul :hover {
+.footer-column ul :hover {
     color: rgb(34, 19, 192);
   }
-  /* List items under each heading */
-  .footer-column ul li {
+.footer-column ul li {
     margin-bottom: 12px;
     cursor: pointer;
   }
-  /* Bottom section of footer (links + language) */
-  .footer-bottom {
+.footer-bottom {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -48,24 +42,20 @@
     font-size: 13px;
     color: #5f6368;
   }
-  /* Links container */
-  .footer-links {
+.footer-links {
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
   }
-  .footer-links :hover {
+.footer-links :hover {
     color: rgb(34, 19, 192);
   }
-  
-  /* Individual links */
-  .footer-links a {
+
+.footer-links a {
     text-decoration: none;
     color: #5f6368;
   }
-  /* Language display on the bottom right */
-  .footer-language {
+.footer-language {
     margin-top: 1px;
     padding-left: 500px;
   }
-  
