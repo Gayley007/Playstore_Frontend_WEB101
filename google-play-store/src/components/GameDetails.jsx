@@ -16,9 +16,15 @@ const GameDetails = () => {
       <img src={game.image} alt={game.title} style={{ width: "300px" }} />
       <p><strong>Category:</strong> {game.category}</p>
       <p><strong>Rating:</strong> ⭐ {game.rating}</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Game description goes here.</p>
+      <p><strong>Install:</strong> INSTALL {game.install}</p>
+      <p>Block Blast is a colorful, fun, and highly addictive offline block puzzle game that combines
+         the best of casual gameplay and brain training. Designed for everyone, this relaxing game is 
+         perfect whether you're a fan of logic puzzles, match 3 challenges, or just want a few minutes of simple fun.</p>
+    <p><strong>Comment:</strong> I really enjoy playing Block Blast{game.rating}</p>
     </div>
+    
   );
+  
 };
 
 export default GameDetails;
