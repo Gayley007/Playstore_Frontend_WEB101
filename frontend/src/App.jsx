@@ -4,6 +4,7 @@ import KidsSection from './kids_page/KidsSection.jsx';
 import Game from './game.jsx';
 import LoginPage from './components/login.jsx'; 
 import SignupPage from './components/signup.jsx';
+import GameDetailPage from './components/GameDetailPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/games" element={<Game />} />
       <Route path="/login" element={<LoginPage />} /> 
       <Route path="/signup" element={<SignupPage />} /> 
+      <Route path="/games/block-blast" element={<GameDetailPage />} />
     </Routes>
   );
 }

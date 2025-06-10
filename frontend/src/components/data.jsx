@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./data.css";
 import { Link } from "react-router-dom";
 
@@ -127,16 +128,17 @@ const GameCard = ({ game }) => {
 const Data = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
+  const navigate = useNavigate();
 
   // Function to determine visible cards based on screen width
   const updateVisibleCards = () => {
     const width = window.innerWidth;
     if (width >= 1024) {
-      setVisibleCards(3); // Large screens (e.g., desktops)
+      setVisibleCards(3);
     } else if (width >= 768) {
-      setVisibleCards(2); // Medium screens (e.g., tablets)
+      setVisibleCards(2);
     } else {
-      setVisibleCards(1); // Small screens (e.g., mobile)
+      setVisibleCards(1);
     }
   };
 
@@ -172,7 +174,30 @@ const Data = () => {
         <div className="carouselWrapper">
           <div className="carousel">
             {games.slice(startIndex, startIndex + visibleCards).map((game) => (
-              <GameCard key={game.id} game={game} />
+              <div
+                key={game.id}
+                className="card"
+                onClick={() => {
+                  if (game.title === "Block Blast") {
+                    navigate("/games/block-blast");
+                  }
+                }}
+                style={game.title === "Block Blast" ? { cursor: "pointer" } : {}}
+              >
+                <div className="imageWrapper">
+                  <img src={game.image} alt={game.title} className="image" />
+                </div>
+                <div className="details">
+                  <div className="iconWrapper">
+                    <img src={game.icon} alt={`${game.title} icon`} className="icon" />
+                  </div>
+                  <div>
+                    <h3 className="title">{game.title}</h3>
+                    <p className="category">{game.category}</p>
+                    <p className="rating">⭐ {game.rating}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
