@@ -105,7 +105,7 @@ const GameDetailPage = () => {
             {/* Right: App Icon */}
             <div className="game-detail-app-icon">
               <img
-                src="/gameworld.png"
+                src="/game1-icon.jpg"
                 alt="Block Blast! Game Icon"
               />
             </div>
