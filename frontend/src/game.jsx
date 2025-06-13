@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import { Search, HelpCircle } from "lucide-react";
 import "./game.css";
@@ -48,24 +49,9 @@ export default function Game() {
           </div>
 
           <div className="game-tabs">
-            <NavLink
-              to="/games"
-              className={({ isActive }) => "game-tab" + (isActive ? " game-active" : "")}
-            >
-              Games
-            </NavLink>
-            <NavLink
-              to="/apps"
-              className={({ isActive }) => "game-tab" + (isActive ? " game-active" : "")}
-            >
-              Apps
-            </NavLink>
-            <NavLink
-              to="/kids"
-              className={({ isActive }) => "game-tab" + (isActive ? " game-active" : "")}
-            >
-              Kids
-            </NavLink>
+            <NavLink to="/games" className="game-tab" activeClassName="game-active">Games</NavLink>
+            <NavLink to="/apps" className="game-tab" activeClassName="game-active">Apps</NavLink>
+            <NavLink to="/kids" className="game-tab" activeClassName="game-active">Kids</NavLink>
           </div>
         </div>
 
@@ -113,6 +99,3 @@ export default function Game() {
     </>
   );
 }
-
-
-
