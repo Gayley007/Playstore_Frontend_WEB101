@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../App';
 import './login.css';
+import { ArrowLeft } from 'lucide-react';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
@@ -8,10 +10,12 @@ export default function SignupPage() {
   const [confirm, setConfirm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     if (!email || !password || !confirm) {
@@ -31,15 +35,43 @@ export default function SignupPage() {
       return;
     }
     setIsLoading(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch('http://localhost:4000/api/v1/users/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        setError(data?.error?.details?.[0] || 'Signup failed');
+        setIsLoading(false);
+        return;
+      }
+      const data = await res.json();
+      login(data.user); // Save user in context
+      localStorage.setItem('token', data.token); // Save JWT for future requests
+      navigate('/games');
+    } catch {
+      setError('Network error');
+    } finally {
       setIsLoading(false);
-      alert('Signup successful (demo only)');
-    }, 1500);
+    }
   };
 
   return (
     <div className="simple-login-outer">
       <div className="simple-login-container">
+        {/* Back arrow icon */}
+        <div style={{ width: "100%", display: "flex", alignItems: "center", marginBottom: 8 }}>
+          <button
+            type="button"
+            onClick={() => navigate('/games')}
+            className="back-arrow"
+            aria-label="Back to games"
+          >
+            <ArrowLeft size={24} />
+          </button>
+        </div>
         <div className="login-title">Sign up</div>
         <p className="login-desc">Create your account to get started</p>
         <form className="simple-login-form" onSubmit={handleSubmit}>
@@ -50,7 +82,6 @@ export default function SignupPage() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               title="Please enter a valid email address (e.g. example@gmail.com)"
             />
           </div>

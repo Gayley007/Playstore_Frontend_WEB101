@@ -1,20 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom"; 
 import "../apps_page/apps.css"; 
 import { Search, HelpCircle } from "lucide-react";
 import Footer from '../components/footer.jsx'; 
-
-const games = [
-  { id: 1, image: '/mlbb.png', name: 'Mobile Legends: Bang Bang', tags: 'Action · Strategy · MOBA · Battling', rating: 4.0 },
-  { id: 4, image: '/blockblast.png', name: 'Block Blast!', tags: 'Puzzle · Block · Casual · Offline', rating: 4.8 },
-  { id: 7, image: '/gameworld.png', name: 'Game World: Life Story', tags: 'Educational · Simulation · Life · Casual', rating: 4.7 },
-  { id: 2, image: '/superbear.png', name: 'Super Bear Adventure', tags: 'Adventure · Action · Casual · Offline', rating: 4.4 },
-  { id: 5, image: '/craftsman.png', name: 'Craftsman: Building Craft', tags: 'Simulation · Sandbox · Single player', rating: 3.4 },
-  { id: 8, image: '/holeio.png', name: 'Hole.io', tags: 'Arcade · Action · IO game · Casual', rating: 3.2 },
-  { id: 3, image: '/iamcat.png', name: 'I Am Cat', tags: 'Simulation · Life · Casual · Offline', rating: 4.4 },
-  { id: 6, image: '/pubg.png', name: 'PUBG MOBILE', tags: 'Action · Tactical shooter · Multiplayer', rating: 4.4 },
-  { id: 9, image: '/stickman.png', name: 'Stickman Party 234 MiniGames', tags: 'Arcade · Board · Party · Casual', rating: 4.5 },
-];
 
 const recommended = [
   { title: 'X', rating: 3.9, img: 'recommended1.png' },
@@ -51,6 +39,28 @@ const productivity = [
 
 export default function AppSection() { 
   const [activeTab, setActiveTab] = useState('Top free');
+  const [showSearch, setShowSearch] = useState(false);
+  const [apps, setApps] = useState([]);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const searchInputRef = useRef(null);
+
+  useEffect(() => {
+    if (showSearch && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [showSearch]);
+
+  // Fetch apps from backend with pagination and search
+  useEffect(() => {
+    fetch(`https://localhost:4000/api/v1/games?search=${search}&page=${page}&limit=6`)
+      .then(res => res.json())
+      .then(data => {
+        setApps(data.games || []);
+        setTotalPages(data.totalPages || 1);
+      });
+  }, [search, page]);
 
   const games = [
     { id: 1, image: '/bhutanndi.png', name: 'Bhutan NDI', tags: 'Business', rating: 3.3 },
@@ -88,7 +98,23 @@ export default function AppSection() {
 
         {/* Right section: Icons */}
         <div className="apps-right-section">
-          <Search className="apps-icon" />
+          <div className="apps-searchbar-container">
+            {showSearch ? (
+              <div className="apps-searchbar-expanded">
+                <Search className="apps-searchbar-icon" />
+                <input
+                  ref={searchInputRef}
+                  className="apps-searchbar-input"
+                  type="text"
+                  placeholder="Search for apps & games"
+                  onBlur={() => setShowSearch(false)}
+                  onKeyDown={e => { if (e.key === "Escape") setShowSearch(false); }}
+                />
+              </div>
+            ) : (
+              <Search className="apps-icon" onClick={() => setShowSearch(true)} />
+            )}
+          </div>
           <HelpCircle className="apps-icon" />
           <div className="apps-profile">S</div>
         </div>
@@ -129,7 +155,7 @@ export default function AppSection() {
         </div>
 
         <div className="apps-top-charts-list">
-          {games.map((game) => (
+          {apps.map((game) => (
             <div key={game.id} className="apps-top-charts-card">
               <div className="apps-top-charts-number">{game.id}</div>
               <img src={game.image} alt={game.name} className="apps-top-charts-image" />
@@ -183,6 +209,13 @@ export default function AppSection() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Pagination controls */}
+      <div style={{ margin: 16 }}>
+        <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>Prev</button>
+        <span style={{ margin: "0 8px" }}>Page {page} of {totalPages}</span>
+        <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>Next</button>
       </div>
 
       {/* Footer */}

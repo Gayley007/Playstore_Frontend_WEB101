@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import { Search, HelpCircle } from "lucide-react";
 import "./game.css";
@@ -9,6 +10,8 @@ import Footer from './components/footer.jsx';
 export default function Game() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const profileRef = useRef(null);
+  const [showSearch, setShowSearch] = useState(false);
+  const searchInputRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -23,6 +26,12 @@ export default function Game() {
     }
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [dropdownOpen]);
+
+  useEffect(() => {
+    if (showSearch && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [showSearch]);
 
   return (
     <>
@@ -48,7 +57,23 @@ export default function Game() {
 
         {/* Right section: Icons */}
         <div className="game-right-section">
-          <Search className="game-icon" />
+          <div className="game-searchbar-container">
+            {showSearch ? (
+              <div className="game-searchbar-expanded">
+                <Search className="game-searchbar-icon" />
+                <input
+                  ref={searchInputRef}
+                  className="game-searchbar-input"
+                  type="text"
+                  placeholder="Search for apps & games"
+                  onBlur={() => setShowSearch(false)}
+                  onKeyDown={e => { if (e.key === "Escape") setShowSearch(false); }}
+                />
+              </div>
+            ) : (
+              <Search className="game-icon" onClick={() => setShowSearch(true)} />
+            )}
+          </div>
           <HelpCircle className="game-icon" />
           <NavLink to="/login">
             <button className="game-login-btn">Login</button>

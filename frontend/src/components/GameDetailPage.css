@@ -1,0 +1,408 @@
+body {
+  background: #fff !important;
+}
+
+.game-detail-page {
+  background: #fff;
+  padding-top: 1100px;
+  min-height: 100vh;
+}
+
+.container {
+  margin-top: 0;
+}
+
+.developer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.developer-name {
+  color: #01875f;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ads-notice {
+  margin-left: 16px;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.game-header-main-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.game-detail-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.game-title {
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: black;
+  letter-spacing: -1px;
+}
+
+.game-detail-stats-row {
+  display: flex;
+  gap: 0;
+  margin: 18px 0 24px 0;
+}
+
+.game-detail-stat {
+  min-width: 120px;
+  margin-right: 32px;
+  position: relative;
+  padding-right: 32px;
+}
+
+.game-detail-stat:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.game-detail-stat:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  height: 36px;
+  width: 1px;
+  background: #e0e0e0;
+}
+
+.game-detail-stat-value {
+  font-size: 22px;
+  font-weight: 500;
+  color: #202124;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.game-detail-stat-label {
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.game-detail-age-badge {
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0 6px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #01875f;
+  background: #f6fef9;
+}
+
+.game-detail-actions {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 18px 0;
+  align-items: center;
+}
+
+.game-detail-install-btn {
+  background: #01875f;
+  color: #fff;
+  border: none;
+  padding: 14px 48px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(1, 135, 95, 0.08);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.game-detail-install-btn:hover,
+.game-detail-install-btn:focus {
+  background: #026e4f;
+  box-shadow: 0 2px 8px rgba(1, 135, 95, 0.18);
+}
+
+.game-detail-secondary-btn {
+  background: none;
+  color: #01875f;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-radius: 6px;
+  height: 48px;
+}
+
+.game-detail-secondary-btn svg {
+  color: #01875f;
+}
+
+.game-detail-app-icon {
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.game-detail-app-icon img {
+  width: 200px;
+  height: 200px;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(60, 64, 67, 0.15);
+  background: #fff;
+  object-fit: cover;
+}
+
+/* About section */
+.about-section {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.about-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.about-section-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #222;
+  margin: 0;
+}
+
+.about-section-arrow {
+  font-size: 22px;
+  color: #888;
+}
+
+.about-section-desc,
+.about-section-desc2 {
+  color: #5f6368;
+  font-size: 17px;
+  margin-bottom: 18px;
+  max-width: 900px;
+}
+
+.about-section-desc2 {
+  margin-bottom: 28px;
+}
+
+.about-section-updated-label {
+  font-size: 16px;
+  color: #222;
+  font-weight: 500;
+  margin-bottom: 4px;
+  margin-top: 32px;
+}
+
+.about-section-updated-date {
+  color: #5f6368;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.about-section-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.about-section-tag {
+  border: 1px solid #dadce0;
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: 15px;
+  color: #444;
+  background: #fff;
+}
+
+/* Ratings and reviews section */
+.ratings-reviews-section {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.ratings-reviews-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.ratings-reviews-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #222;
+  margin: 0;
+}
+
+.ratings-reviews-arrow {
+  font-size: 22px;
+  color: #888;
+}
+
+.ratings-reviews-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ratings-reviews-score {
+  min-width: 120px;
+  text-align: center;
+}
+
+.ratings-reviews-score-value {
+  font-size: 48px;
+  font-weight: 500;
+  color: #222;
+}
+
+.ratings-reviews-score-stars {
+  color: #01875f;
+  font-size: 22px;
+  margin: 4px 0;
+}
+
+.ratings-reviews-score-count {
+  color: #5f6368;
+  font-size: 15px;
+}
+
+.ratings-reviews-bars {
+  flex: 1;
+  min-width: 220px;
+  max-width: 350px;
+}
+
+.ratings-reviews-bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.ratings-reviews-bar-label {
+  width: 18px;
+  font-size: 15px;
+  color: #444;
+}
+
+.ratings-reviews-bar-bg {
+  background: #e0e0e0;
+  border-radius: 8px;
+  height: 10px;
+  width: 80%;
+  margin: 0 8px;
+  position: relative;
+}
+
+.ratings-reviews-bar-fill {
+  background: #01875f;
+  border-radius: 8px;
+  height: 10px;
+}
+
+/* Single review card */
+.ratings-reviews-single {
+  margin-top: 40px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+  max-width: 800px;
+}
+
+.ratings-reviews-single-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.ratings-reviews-single-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ratings-reviews-single-user {
+  font-weight: 500;
+  color: #222;
+}
+
+.ratings-reviews-single-stars {
+  color: #01875f;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.ratings-reviews-single-date {
+  color: #444;
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.ratings-reviews-single-text {
+  color: #222;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.ratings-reviews-single-helpful {
+  color: #5f6368;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.ratings-reviews-single-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.ratings-reviews-single-action {
+  border: 1px solid #dadce0;
+  border-radius: 20px;
+  padding: 6px 24px;
+  font-size: 15px;
+  color: #444;
+  background: #fff;
+  cursor: pointer;
+}
+
+.write-review-btn {
+  background: #01875f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 48px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(1, 135, 95, 0.08);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.write-review-btn:hover,
+.write-review-btn:focus {
+  background: #026e4f;
+  box-shadow: 0 2px 8px rgba(1, 135, 95, 0.18);
+}

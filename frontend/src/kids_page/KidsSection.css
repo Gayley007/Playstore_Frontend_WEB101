@@ -72,9 +72,9 @@ body {
 .kids-profile {
   width: 32px;
   height: 32px;
-  background-color: #f97316; /* Orange background */
+  background-color: #f97316;
   color: white;
-  border-radius: 50%; /* Make it a circle */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,7 +144,7 @@ body {
   padding-bottom: 10px;
 }
 .kids-card {
-  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  flex: 0 0 auto; 
   width: 145px; 
   height: 200px; 
   border-radius: 8px;
@@ -243,3 +243,5 @@ body {
   margin-top: 1px;
   padding-left: 500px;
 }
+
+

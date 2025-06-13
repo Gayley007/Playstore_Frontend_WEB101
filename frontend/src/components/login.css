@@ -1,11 +1,6 @@
 body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
-  background: #f5f8ff;
+  background: #ffffff;
 }
 
 .simple-login-outer {
@@ -13,7 +8,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f8ff;
+  background: #ffffff;
 }
 
 .simple-login-container {
@@ -58,7 +53,7 @@ body {
   border-radius: 6px;
   font-size: 1rem;
   background: #fafbfc;
-  color: #222; /* Ensure input text is visible */
+  color: #222;
 }
 
 .simple-login-form button {
@@ -118,4 +113,30 @@ body {
 
 .signup-link:hover {
   text-decoration: underline;
+}
+
+.back-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+  outline: none;
+}
+
+.back-arrow svg {
+  color: #000;
+  transition: color 0.2s;
+}
+
+.back-arrow:hover svg {
+  color: #2563eb;
+}
+
+.back-arrow:focus {
+  outline: none;
+  box-shadow: none;
 }
