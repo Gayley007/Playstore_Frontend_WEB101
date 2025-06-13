@@ -4,7 +4,7 @@ body {
 
 .game-detail-page {
   background: #fff;
-  padding-top: 700px;
+  padding-top: 1100px;
   min-height: 100vh;
 }
 
@@ -385,4 +385,24 @@ body {
   color: #444;
   background: #fff;
   cursor: pointer;
+}
+
+.write-review-btn {
+  background: #01875f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 48px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(1, 135, 95, 0.08);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.write-review-btn:hover,
+.write-review-btn:focus {
+  background: #026e4f;
+  box-shadow: 0 2px 8px rgba(1, 135, 95, 0.18);
 }

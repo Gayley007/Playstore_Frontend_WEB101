@@ -1,27 +1,47 @@
 import React, { useState, useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { Search, HelpCircle, Share2, Bookmark } from "lucide-react";
 import "./GameDetailPage.css";
 
 const GameDetailPage = () => {
+  // State for search bar expansion
   const [showSearch, setShowSearch] = useState(false);
   const searchInputRef = useRef(null);
+  const navigate = useNavigate();
+  const { id } = useParams();
 
+  // Focus the search input when expanded
   useEffect(() => {
     if (showSearch && searchInputRef.current) {
       searchInputRef.current.focus();
     }
   }, [showSearch]);
 
+  // Handler for "See all reviews" button (can be expanded to navigate or open modal)
+  const handleSeeAllReviews = () => {
+    window.alert("Show all reviews (not implemented)");
+  };
+
+  // Download handler for "Install" button
+  const handleInstall = () => {
+    const fileUrl = "/block-blast.apk"; 
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "Block-Blast.apk";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
-      {/* Header/Nav (copied from KidsSection.jsx, but using 'game-' class names for consistency) */}
+      {/* Header/Nav */}
       <div className="game-header">
         {/* Left section: Logo and Tabs */}
         <div className="game-left-section">
           <div className="game-google-play-logo">
             <img
-              src="/logo.png" // <-- Use a leading slash for public folder assets
+              src="/logo.png" 
               alt="Google Play Logo"
               className="game-google-logo-icon"
             />
@@ -33,7 +53,7 @@ const GameDetailPage = () => {
             <NavLink to="/kids" className="game-tab" activeClassName="game-active">Kids</NavLink>
           </div>
         </div>
-        {/* Right section: Icons */}
+        {/* Right section: Search, Help, Profile */}
         <div className="game-right-section">
           <div className="game-searchbar-container">
             {showSearch ? (
@@ -60,8 +80,9 @@ const GameDetailPage = () => {
       {/* Main Game Detail Section */}
       <div className="game-detail-page">
         <div className="container">
+          {/* Game header row: Info and App Icon */}
           <div className="game-header-main-row">
-            {/* Left: Info */}
+            {/* Left: Game Info */}
             <div className="game-detail-info">
               <h1 className="game-title">
                 Block Blast!
@@ -71,16 +92,19 @@ const GameDetailPage = () => {
                 <span className="ads-notice">Contains ads</span>
               </div>
               <div className="game-detail-stats-row">
+                {/* Rating */}
                 <div className="game-detail-stat">
                   <div className="game-detail-stat-value">
                     4.8<span style={{ fontSize: 18, color: "#202124" }}>★</span>
                   </div>
                   <div className="game-detail-stat-label">2.01M reviews</div>
                 </div>
+                {/* Downloads */}
                 <div className="game-detail-stat">
                   <div className="game-detail-stat-value">500M+</div>
                   <div className="game-detail-stat-label">Downloads</div>
                 </div>
+                {/* Age */}
                 <div className="game-detail-stat" style={{ minWidth: 80, marginRight: 0, paddingRight: 0 }}>
                   <div className="game-detail-stat-value">
                     <span className="game-detail-age-badge">3+</span>
@@ -88,8 +112,9 @@ const GameDetailPage = () => {
                   <div className="game-detail-stat-label">Rated for 3+</div>
                 </div>
               </div>
+              {/* Install/Share/Wishlist Buttons */}
               <div className="game-detail-actions">
-                <button className="game-detail-install-btn">
+                <button className="game-detail-install-btn" onClick={handleInstall}>
                   Install
                 </button>
                 <button className="game-detail-secondary-btn">
@@ -177,22 +202,66 @@ const GameDetailPage = () => {
                 ))}
               </div>
             </div>
-            {/* Single review card */}
+            {/* Example review card 1 */}
             <div className="ratings-reviews-single">
               <div className="ratings-reviews-single-header">
-                <img src="/user1.jpg" alt="gianniskl._" className="ratings-reviews-single-avatar" />
+                <img src="/user1.jpg" alt="" className="ratings-reviews-single-avatar" />
                 <div>
-                  <div className="ratings-reviews-single-user">gianniskl._</div>
+                  <div className="ratings-reviews-single-user">UserA</div>
                   <div className="ratings-reviews-single-stars">
                     ★★★★★ <span className="ratings-reviews-single-date">April 5, 2025</span>
                   </div>
                 </div>
               </div>
               <div className="ratings-reviews-single-text">
-                I really enjoy playing Block Blast—it's fun, addictive, and a great way to pass time. But I have one suggestion that I think would make a big difference: please add an option to save progress, like linking the game to an account or cloud backup. I'm planning to get a new phone soon, and I'm worried I'll lose all my progress. It would be awesome if we had a way to transfer our game data easily. That way, players can keep enjoying the game without starting over. Overall, <span style={{ color: "#fbbc04" }}>★★★★★</span>!
+                I really enjoy playing Block Blast—it's fun<span style={{ color: "#fbbc04" }}>★★★★★</span>!
               </div>
               <div className="ratings-reviews-single-helpful">
-                10,040 people found this review helpful
+                10,640 people found this review helpful
+              </div>
+              <div className="ratings-reviews-single-actions">
+                <span className="ratings-reviews-single-action">Yes</span>
+                <span className="ratings-reviews-single-action">No</span>
+              </div>
+            </div>
+            {/* Example review card 2 */}
+            <div className="ratings-reviews-single">
+              <div className="ratings-reviews-single-header">
+                <img src="/user2.jpg" alt="" className="ratings-reviews-single-avatar" />
+                <div>
+                  <div className="ratings-reviews-single-user">UserB</div>
+                  <div className="ratings-reviews-single-stars">
+                    ★★★★ <span className="ratings-reviews-single-date">April 2, 2025</span>
+                  </div>
+                </div>
+              </div>
+              <div className="ratings-reviews-single-text">
+                this game is good on its on
+              </div>
+              <div className="ratings-reviews-single-helpful">
+                9,309 people found this review helpful
+              </div>
+              <div className="ratings-reviews-single-actions">
+                <span className="ratings-reviews-single-action">Yes</span>
+                <span className="ratings-reviews-single-action">No</span>
+              </div>
+            </div>
+            {/* Example review card 3 */}
+            <div className="ratings-reviews-single">
+              <div className="ratings-reviews-single-header">
+                <img src="/user3.jpg" alt="" className="ratings-reviews-single-avatar" />
+                <div>
+                  <div className="ratings-reviews-single-user">User3</div>
+                  <div className="ratings-reviews-single-stars">
+                    ★★ <span className="ratings-reviews-single-date">April 1, 2025</span>
+                  </div>
+                </div>
+              </div>
+              <div className="ratings-reviews-single-text">
+                It has so many ads
+              </div>
+              <div className="ratings-reviews-single-helpful">
+                10,640 people found this review helpful
               </div>
               <div className="ratings-reviews-single-actions">
                 <span className="ratings-reviews-single-action">Yes</span>
